@@ -32,4 +32,14 @@ defmodule ComeoninI18nTest do
     "Das Kennwort sollte mindestens 8 Zeichen lang sein."
   end
 
+  test "gettext returns Russian message if locale is ru_RU" do
+    Gettext.put_locale(ComeoninI18n.Gettext, "ru_RU")
+
+    assert pass_no_extra_chars ==
+    "Пароль должен содержать минимум одну цифру или спецсимвол."
+
+    assert pass_too_short(8) ==
+    "Минимально допустимая длина пароля составляет 8."
+  end
+
 end
