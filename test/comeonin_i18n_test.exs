@@ -2,6 +2,11 @@ defmodule ComeoninI18nTest do
   use ExUnit.Case, async: true
   import ComeoninI18n
 
+  test "gettext returns English message for default locale" do
+    assert pass_no_extra_chars ==
+    "The password should contain at least one number and one punctuation character."
+  end
+
   test "gettext returns Japanese message if locale is ja_JP" do
     Gettext.put_locale(ComeoninI18n.Gettext, "ja_JP")
 
@@ -10,6 +15,9 @@ defmodule ComeoninI18nTest do
 
     assert pass_too_short(8) ==
     "パスワードは8文字以上である必要があります。"
+
+    assert weak_pass ==
+    "入力されたパスワードは推測が容易で強度が不十分です。違うものを指定してください。"
   end
 
   test "gettext returns French message if locale is fr_FR" do
