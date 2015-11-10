@@ -1,15 +1,15 @@
 # ComeoninI18n
 
-**TODO: Add description**
+Internationalization support for the `Comeonin` password hashing library.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
+The package can be installed as:
 
   1. Add comeonin_i18n to your list of dependencies in `mix.exs`:
 
         def deps do
-          [{:comeonin_i18n, "~> 0.0.1"}]
+          [{:comeonin_i18n, "~> 0.1.0"}]
         end
 
   2. Ensure comeonin_i18n is started before your application:
