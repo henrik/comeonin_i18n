@@ -1,14 +1,9 @@
-defmodule Mix.Tasks.Compile.ComeoninI18n do
-  @shortdoc "Compiles Comeonin internationalization module"
-
-  def run(_) do
-    File.mkdir("priv")
-    File.cp_r("po", "priv/gettext")
-  end
-end
-
 defmodule ComeoninI18n.Mixfile do
   use Mix.Project
+
+  @description """
+  Internationalization support for the Comeonin password hashing library.
+  """
 
   def project do
     [app: :comeonin_i18n,
@@ -16,7 +11,11 @@ defmodule ComeoninI18n.Mixfile do
      elixir: "~> 1.1",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     compilers: [:comeonin_i18n, :gettext] ++ Mix.compilers,
+     name: "ComeoninI18n",
+     description: @description,
+     package: package,
+     source_url: "https://github.com/riverrun/comeonin_i18n",
+     compilers: [:gettext] ++ Mix.compilers,
      deps: deps]
   end
 
@@ -26,5 +25,14 @@ defmodule ComeoninI18n.Mixfile do
 
   defp deps do
     [{:gettext, "~> 0.7"}]
+  end
+
+  defp package do
+    [
+      maintainers: ["David Whitlock"],
+      licenses: ["BSD"],
+      links: %{"GitHub" => "https://github.com/elixircnx/comeonin_i18n",
+        "Docs" => "http://hexdocs.pm/comeonin_i18n"}
+    ]
   end
 end
