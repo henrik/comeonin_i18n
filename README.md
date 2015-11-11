@@ -6,16 +6,17 @@ Internationalization support for the `Comeonin` password hashing library.
 
 The package can be installed as:
 
-  1. Add comeonin_i18n to your list of dependencies in `mix.exs`:
+  1. Add comeonin_i18n and comeonin to your list of dependencies in `mix.exs`:
 
         def deps do
-          [{:comeonin_i18n, "~> 0.1.0"}]
+          [{:comeonin_i18n, "~> 0.1"},
+          {:comeonin, "~> 1.5"]
         end
 
-  2. Ensure comeonin_i18n is started before your application:
+  2. Ensure comeonin_i18n and comeonin are started before your application:
 
         def application do
-          [applications: [:comeonin_i18n]]
+          [applications: [:comeonin_i18n, :comeonin]]
         end
 
 ### Contributions
