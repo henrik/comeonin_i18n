@@ -50,4 +50,14 @@ defmodule ComeoninI18nTest do
     "Минимально допустимая длина пароля составляет 8."
   end
 
+  test "gettext returns Spanish message if locale is es_ES" do
+    Gettext.put_locale(ComeoninI18n.Gettext, "es_ES")
+
+    assert pass_no_extra_chars ==
+      "La clave debe contener al menos un dígito numérico y un signo de puntuación."
+
+    assert pass_too_short(8) ==
+      "La clave debe contener al menos 8 caracteres."
+  end
+
 end
