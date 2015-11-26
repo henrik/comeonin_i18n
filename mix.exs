@@ -31,7 +31,7 @@ defmodule ComeoninI18n.Mixfile do
     [
       maintainers: ["David Whitlock"],
       licenses: ["BSD"],
-      links: %{"GitHub" => "https://github.com/elixircnx/comeonin_i18n",
+      links: %{"GitHub" => "https://github.com/riverrun/comeonin_i18n",
         "Docs" => "http://hexdocs.pm/comeonin_i18n"}
     ]
   end
